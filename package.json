@@ -3,7 +3,16 @@
   "description": "a note taking app",
   "version": "0.0.1",
   "dependencies": {
+    "chai": "^1.9.1",
     "express": "^4.0",
-    "mongoose": "^3.8"
+    "mocha": "^1.18.2",
+    "mongoose": "^3.8",
+    "superagent": "^0.18.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.2.0",
+    "chai": "^1.9.1",
+    "mocha": "^1.18.2",
+    "superagent": "^0.18.0"
   }
 }
