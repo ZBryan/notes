@@ -7,15 +7,15 @@ var express = require('express'),
     noteRoutes = require('./routes/noteRoutes'),
     app = express();
 
-app.use(bodyparser());
+app.use(bodyparser.json());
 
 mongoose.connect('mongodb://localhost/notes-development');
 
 app.get('/api/v1/notes', noteRoutes.collection);
-app.get('/api/v1/note/:id', noteRoutes.findById);
+app.get('/api/v1/notes/:id', noteRoutes.findById);
 app.post('/api/v1/notes', noteRoutes.create);
-app.put('/api/v1/note/:id', noteRoutes.update);
-app.delete('/api/v1/note/:id', noteRoutes.destroy);
+app.put('/api/v1/notes/:id', noteRoutes.update);
+app.delete('/api/v1/notes/:id', noteRoutes.destroy);
 
 app.set('port', process.env.PORT || 3000);
 var server = http.createServer(app);

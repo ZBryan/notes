@@ -1,0 +1,23 @@
+{
+  "name": "notes",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ZBryan/notes",
+  "authors": [
+    "Zach Bryan <zachx1@gmail.com>"
+  ],
+  "description": "notes example",
+  "main": "server.js",
+  "keywords": [
+    "node"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
+}

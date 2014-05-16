@@ -5,13 +5,15 @@ var superagent = require('superagent'),
     should = chai.should,
 
     app = require('../../server.js').app;
+var port = process.env.PORT || 3000;
+var resourceUrl = 'htpp://localhost:' + port + 'api/v1/notes';
 
 describe('Note JSON api', function(done){
   var id;
 
   //testing the POST function of the JSON API
   it('can sucessfully create a new note', function(done){
-    superagent.post('http://localhost:3000/api/v1/notes')
+    superagent.post('resourceUrl')
       .send({
         body: 'a new note!'
       })
@@ -27,7 +29,7 @@ describe('Note JSON api', function(done){
   });
   //testing the Get function of the JSON API
   it('can sucessfully get a note', function(done){
-    superagent.get('http://localhost:3000/api/v1/note/' + id)
+    superagent.get('resourceUrl/' + '/' + id)
       .end(function(err, res){
         expect(err).to.eql(null);
         expect(res.body._id).to.eql(id);
@@ -39,7 +41,7 @@ describe('Note JSON api', function(done){
 
   //testing the PUT function
   it('can sucessfully update a note', function(done){
-    superagent.put('http://localhost:3000/api/v1/note/' + id)
+    superagent.put('resourceUrl/' + '/' + id)
       .send({
         body: 'an updated note'
       })
@@ -53,7 +55,7 @@ describe('Note JSON api', function(done){
   });
   //testing the destroy function
   it('it sucessfully destroys a note', function(done){
-    superagent.del('http://localhost:3000/api/v1/note/' + id)
+    superagent.del('resourceUrl/' + '/' + id)
       .end(function(err, res){
         expect(err).to.eql(null);
 
